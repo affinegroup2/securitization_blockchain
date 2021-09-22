@@ -14,11 +14,11 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 ## Flow
 
-1. A homebuyer leverages the services of a Loan Originator to secure financing for a home mortgage
+1. A producer leverages the services of a MicroLoan Originator to secure financing for a renewable energy project
 
-2. The Loan Originator loads the application, and submits requests to update the Blockchain ledger state with a new Asset
+2. The MicroLoan Originator loads the application, and submits requests to update the Blockchain ledger state with a new Asset
 
-This request is handled by the node.js Express backend formats CRUD request into a [jsonrpc](http://www.jsonrpc.org/specification#examples) object like below, and submits it to a Hyperledger peer as a transaction proposal. The request below would register a mortgage with a value of $540000, an interest rate of 3.3%, and a credit score of 720. The credit score is used to calculate risk for potential investors.
+This request is handled by the node.js Express backend formats CRUD request into a [jsonrpc](http://www.jsonrpc.org/specification#examples) object like below, and submits it to a Hyperledger peer as a transaction proposal. The request below would register a loan with a value of $540000, an interest rate of 13.3%, and a simulated credit score of 720. The credit score is used to calculate risk for potential investors.
 
 ```json
 {
@@ -454,13 +454,13 @@ TONE_ANALYZER_PASSWORD=<add_tone_analyzer_password>
 <!-- TODO, reword this -->
 The securitization flow generally occurs in the following format
 
-1. A homebuyer will apply for financing of an asset via a loan "originator". The loan will have a balance, interest rate, monthly payment, and expected time period for payback (many mortgages are roughly 30 years). A total expected payoff amount will be generated based off this information as well.
+1. A renewable developer will apply for financing of an asset via a loan "originator". The loan will have a balance, interest rate, monthly payment, and expected time period for payback  . A total expected payoff amount will be generated based off this information as well.
 
 2. Once the loan has been approved and processed, the loan originator then finances the asset, and transfers the debt to a "Special Purpose Vehicle", which is a entity that protects the assets even if the originator goes bankrupt.
 
 3. The Asset is then placed into a "Pool" along with other assets. Once Assets have been placed into a pool, a set of "securities" can be generated to allow the pool to become tradable. Each Security can be bought and sold by investors, and has a "Yield" which determines the return each security holder will receive on their investment.
 
-4. The Homebuyer submits payments towards their mortgage.
+4. The power producer submits payments towards their mortgage.
 
 5. Each payment is split up and distributed amongst investors who own "securities" associated with the pool. When all mortgages in the pool are paid off, each investor should have received their original investment back plus the agreed "Yield" amount. Each payment will also have a processing fee which will be dispersed to the originator
 
